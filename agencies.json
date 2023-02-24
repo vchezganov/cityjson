@@ -1,0 +1,84 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://github.com/vchezganov/cityjson/agencies.json",
+    "title": "Agency",
+    "type": "object",
+    "properties": {
+        "id": {
+            "description": "The unique identifier for an agency",
+            "type": "string"
+        },
+        "name": {
+            "description": "Name of the agency",
+            "type": "string"
+        },
+        "description": {
+            "description": "Description of the agency",
+            "type": "string"
+        },
+        "web": {
+            "description": "Website of the agency",
+            "type": "string"
+        },
+        "phone": {
+            "description": "Phone of the agency",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "propeties": {
+                    "phone_type": {
+                        "description": "Type of the phone (support, information, etc)",
+                        "type": "string"
+                    },
+                    "value": {
+                        "description": "Phone number",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "phone_type",
+                    "value"
+                ],
+                "uniqueItems": true
+            }
+        },
+        "email": {
+            "description": "Email of the agency",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "propeties": {
+                    "email_type": {
+                        "description": "Type of the email (support, information, etc)",
+                        "type": "string"
+                    },
+                    "value": {
+                        "description": "Email address",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "email_type",
+                    "value"
+                ],
+                "uniqueItems": true
+            }
+        },
+        "timezone": {
+            "description": "Timezone where the agency operates and that is used for timetables",
+            "type": "string"
+        },
+        "loc": {
+            "description": "Location of the agency",
+            "$ref": "location.json"
+        },
+        "icon": {
+            "description": "Icon for the agency in base64 format",
+            "type": "string"
+        }
+    },
+    "required": [
+        "id",
+        "name"
+    ]
+}

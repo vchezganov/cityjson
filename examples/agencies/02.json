@@ -1,0 +1,8 @@
+{
+    "id": "02",
+    "name": "Agency 02",
+    "phone": [
+        {"phone_type": "information", "value": "54321"},
+        {"phone_type": "support", "value": "12345"}
+    ]
+}

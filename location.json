@@ -1,0 +1,25 @@
+{
+    "$id1": "location.json",
+    "$id2": "https://vchezganov.github.io/cityjson/schema/location.json",
+    "$id": "https://github.com/vchezganov/cityjson/location.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Geographical Location of longitude, latitude and optional altitude",
+    "type": "array",
+    "minItems": 2,
+    "maxItems": 3,
+    "prefixItems": [
+        {
+            "type": "number",
+            "minimum": -180,
+            "maximum": 180
+        },
+        {
+            "type": "number",
+            "minimum": -90,
+            "maximum": 90
+        },
+        {
+            "type": "number"
+        }
+    ]
+}
