@@ -1,0 +1,68 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://github.com/vchezganov/cityjson/schema/stops.json",
+    "title": "Stop",
+    "type": "object",
+    "properties": {
+        "id": {
+            "description": "Unique identifier for the stop",
+            "type": "string"
+        },
+        "name": {
+            "description": "Name of the stop",
+            "type": "string"
+        },
+        "description": {
+            "description": "Description of the stop",
+            "type": "string"
+        },
+        "loc": {
+            "description": "Location of the stop",
+            "$ref": "location.json"
+        },
+        "web": {
+            "description": "Website of the stop",
+            "type": "string"
+        },
+        "access_points": {
+            "description": "Access points of the stop",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "propeties": {
+                    "id": {
+                        "description": "Unique identifier for the access point",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "Phone number",
+                        "type": "string"
+                    },
+                    "loc": {
+                        "description": "Location of the access point",
+                        "$ref": "location.json"
+                    }
+                },
+                "required": [
+                    "id",
+                    "name",
+                    "loc"
+                ],
+                "uniqueItems": true
+            }
+        },
+        "timezone": {
+            "description": "Timezone where the agency operates and that is used for timetables",
+            "type": "string"
+        },
+        "icon": {
+            "description": "Icon for the agency in base64 format",
+            "type": "string"
+        }
+    },
+    "required": [
+        "id",
+        "name",
+        "loc"
+    ]
+}

@@ -1,0 +1,104 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://github.com/vchezganov/cityjson/schema/routes.json",
+    "title": "Route",
+    "type": "object",
+    "properties": {
+        "id": {
+            "description": "Unique identifier for the route",
+            "type": "string"
+        },
+        "agency_id": {
+            "description": "Agency ID the route belongs to",
+            "type": "string"
+        },
+        "name": {
+            "description": "Name of the route",
+            "type": "string"
+        },
+        "description": {
+            "description": "Description of the route",
+            "type": "string"
+        },
+        "line_color": {
+            "description": "Line color of the route",
+            "$ref": "color.json"
+        },
+        "font_color": {
+            "description": "Font color of the route",
+            "$ref": "color.json"
+        },
+        "vehicle_type": {
+            "description": "Vehicle type of the route",
+            "type": "number"
+        },
+        "features": {
+            "oneOf": [
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "include": {
+                            "description": "Features to be included additionally",
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "exclude": {
+                            "description": "Features to be excluded",
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "operation_days": {
+            "description": "Operation days of the route",
+            "type": "object",
+            "propeties": {
+                "weekdays": {
+                    "description": "Unique identifier for the access point",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "include": {
+                    "description": "Phone number",
+                    "type": "string"
+                },
+                "exclude": {
+                    "description": "Location of the access point",
+                    "$ref": "location.json"
+                }
+            },
+            "required": [
+                "id",
+                "name",
+                "loc"
+            ]
+        },
+        "timezone": {
+            "description": "Timezone where the agency operates and that is used for timetables",
+            "type": "string"
+        },
+        "icon": {
+            "description": "Icon for the agency in base64 format",
+            "type": "string"
+        }
+    },
+    "required": [
+        "id",
+        "name",
+        "loc"
+    ]
+}

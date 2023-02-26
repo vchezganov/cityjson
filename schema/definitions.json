@@ -1,0 +1,48 @@
+{
+    "$id": "https://github.com/vchezganov/cityjson/schema/definitions.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$defs": {
+        "location": {
+            "title": "Geographical Location of longitude, latitude and optional altitude",
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 3,
+            "prefixItems": [
+                {
+                    "type": "number",
+                    "minimum": -180,
+                    "maximum": 180
+                },
+                {
+                    "type": "number",
+                    "minimum": -90,
+                    "maximum": 90
+                },
+                {
+                    "type": "number"
+                }
+            ]
+        },
+
+        "weekdays": {
+            "title": "Array of weekdays",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+                "enum": ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"]
+            }
+        },
+
+        "date": {
+            "oneOf": [
+                {
+                    "type": "string",
+                    "format": "date"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        }
+    }
+}

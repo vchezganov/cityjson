@@ -1,0 +1,37 @@
+{
+    "id": "01",
+    "name": "Stop 01",
+    "description": "Bus stop for interregional trips",
+    "loc": [12.345678, 87.654321],
+    "stop_type": "parent",
+    "timezone": "Europe/Berlin",
+
+    "features": [
+        "wheelchair_access",
+        "elevator",
+        "upstairs_escalator"
+    ],
+
+
+
+    "access_points": [
+        {
+            "id": "01-ap01",
+            "name": "West side entrance",
+            "loc": [12.345678, 87.654321],
+            "features": [
+                "downstairs_escalator"
+            ]
+        }
+    ],
+
+    "child_stops": [
+
+    ],
+
+    "icon": "",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": []
+    }
+}
