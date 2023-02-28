@@ -1,8 +1,11 @@
 {
     "id": "01",
     "name": "Stop 01",
-    "description": "Bus stop for interregional trips",
-    "loc": [12.345678, 87.654321],
+    "description": {
+        "en": "Bus stop for interregional trips",
+        "de-de": "Bushaltestelle für interregionale Reisen"
+    },
+    "loc": [13.404954, 52.520008, 34],
     "stop_type": "parent",
     "timezone": "Europe/Berlin",
 

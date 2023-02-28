@@ -1,6 +1,10 @@
 {
     "id": "03",
-    "name": "Agency 03",
+    "name": {
+        "en": "Agency 03",
+        "de": "Verkehrsbetriebe 03"
+    },
+    "language": "de",
     "phone": [
         {"phone_type": "information", "value": "54321"},
         {"phone_type": "support", "value": "12345"}

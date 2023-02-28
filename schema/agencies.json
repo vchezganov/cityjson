@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://github.com/vchezganov/cityjson/agencies.json",
+    "$id": "https://github.com/vchezganov/cityjson/schema/agencies.json",
     "title": "Agency",
     "type": "object",
     "properties": {
@@ -10,11 +10,11 @@
         },
         "name": {
             "description": "Name of the agency",
-            "type": "string"
+            "$ref": "definitions.json#/$defs/translation"
         },
         "description": {
             "description": "Description of the agency",
-            "type": "string"
+            "$ref": "definitions.json#/$defs/translation"
         },
         "web": {
             "description": "Website of the agency",
@@ -24,6 +24,7 @@
             "description": "Phone number(s) of the agency",
             "oneOf": [
                 {
+                    "description": "Main phone number of the agency",
                     "type": "string"
                 },
                 {
@@ -33,7 +34,7 @@
                         "propeties": {
                             "phone_type": {
                                 "description": "Type of the phone (support, information, etc)",
-                                "type": "string"
+                                "enum": ["main", "support", "information"]
                             },
                             "value": {
                                 "description": "Phone number",
@@ -50,9 +51,10 @@
             ]
         },
         "email": {
-            "description": "Email of the agency",
+            "description": "Email address of the agency",
             "oneOf": [
                 {
+                    "description": "Main email address of the agency",
                     "type": "string"
                 },
                 {
@@ -62,7 +64,7 @@
                         "propeties": {
                             "email_type": {
                                 "description": "Type of the email (support, information, etc)",
-                                "type": "string"
+                                "enum": ["main", "support", "information"]
                             },
                             "value": {
                                 "description": "Email address",
@@ -84,15 +86,20 @@
         },
         "loc": {
             "description": "Location of the agency",
-            "$ref": "location.json"
+            "$ref": "definitions.json#/$defs/location"
         },
         "icon": {
             "description": "Icon for the agency in base64 format",
+            "type": "string"
+        },
+        "language": {
+            "description": "Default language for the agency",
             "type": "string"
         }
     },
     "required": [
         "id",
-        "name"
+        "name",
+        "language"
     ]
 }
