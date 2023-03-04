@@ -1,0 +1,121 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://github.com/vchezganov/cityjson/schema/geometries.json",
+    "title": "Geometry",
+    "type": "object",
+    "properties": {
+        "id": {
+            "description": "Unique identifier of the geometry",
+            "type": "string"
+        },
+        "format": {
+            "description": "Data format of the geometry",
+            "enum": ["geojson", "3D"]
+        },
+        "data": {
+            "description": "Validity of the data",
+            "type": "object",
+            "properties": {
+                "from": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "to": {
+                    "type": "string",
+                    "format": "date"
+                }
+            },
+            "required": ["from", "to"]
+        },
+        "sameStopTransferTime": {
+            "description": "Default transfer time on the same stop",
+            "type": "integer"
+        },
+        "childStopTransferTime": {
+            "description": "Default transfer time between child stops",
+            "type": "integer"
+        },
+        "phone": {
+            "description": "Phone number(s) of the agency",
+            "oneOf": [
+                {
+                    "description": "Main phone number of the agency",
+                    "type": "string"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "propeties": {
+                            "phone_type": {
+                                "description": "Type of the phone (support, information, etc)",
+                                "enum": ["main", "support", "information"]
+                            },
+                            "value": {
+                                "description": "Phone number",
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "phone_type",
+                            "value"
+                        ],
+                        "uniqueItems": true
+                    }
+                }
+            ]
+        },
+        "email": {
+            "description": "Email address of the agency",
+            "oneOf": [
+                {
+                    "description": "Main email address of the agency",
+                    "type": "string"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "propeties": {
+                            "email_type": {
+                                "description": "Type of the email (support, information, etc)",
+                                "enum": ["main", "support", "information"]
+                            },
+                            "value": {
+                                "description": "Email address",
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "email_type",
+                            "value"
+                        ],
+                        "uniqueItems": true
+                    }
+                }
+            ]
+        },
+        "timezone": {
+            "description": "Timezone where the agency operates and that is used for timetables",
+            "type": "string"
+        },
+        "loc": {
+            "description": "Location of the agency",
+            "$ref": "definitions.json#/$defs/location"
+        },
+        "icon": {
+            "description": "Icon for the agency in base64 format",
+            "type": "string"
+        },
+        "language": {
+            "description": "Default language for the agency",
+            "type": "string"
+        }
+    },
+    "required": [
+        "version",
+        "validity",
+        "sameStopTransferTime",
+        "childStopTransferTime"
+    ]
+}

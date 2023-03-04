@@ -43,5 +43,5 @@ def validate_examples(entity_name: str):
 
 
 if __name__ == '__main__':
-    for entity_name in ('agencies', 'stops'):
+    for entity_name in ('settings', 'agencies', 'stops'):
         validate_examples(entity_name)
