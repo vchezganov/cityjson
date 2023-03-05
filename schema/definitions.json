@@ -69,6 +69,29 @@
                     "downstairs_escalator"
                 ]
             }
+        },
+
+        "geometry": {
+            "oneOf": [
+                {
+                    "description": "Reference identifier to the geometry with or without format",
+                    "type": "string"
+                },
+                {
+                    "description": "Geometry of the entity",
+                    "type": "object",
+                    "properties": {
+                        "format": {
+                            "description": "Format of the geometry data",
+                            "enum": ["geojson", "shape"]
+                        },
+                        "data": {
+                            "description": "Geometry data of the entity",
+                            "type": {}
+                        }
+                    }
+                }
+            ]
         }
     }
 }
