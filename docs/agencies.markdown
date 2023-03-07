@@ -8,6 +8,10 @@ a bus operator, a rail agency, or a mobility provider for shared vehicles.
 
 ## Examples (test)
 ```json
+{% include examples/routes/01.json %}
+```
+
+```json
 {
     "id": "foo",
     "name": "Foo Operator",
