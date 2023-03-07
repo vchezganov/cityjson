@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Agency Entity
+permalink: /agencies
 ---
 
 **Agency** entity presents information about certain provider. It could be
