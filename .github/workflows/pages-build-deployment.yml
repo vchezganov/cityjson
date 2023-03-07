@@ -28,9 +28,9 @@ jobs:
         uses: actions/checkout@v3
       - name: Copy Schemas and Examples
         run: |
-          mkdir "./docs/_include"
-          cp -r "./schema" "./docs/_include"
-          cp -r "./examples" "./docs/_include"
+          mkdir "./docs/_includes"
+          cp -r "./schema" "./docs/_includes"
+          cp -r "./examples" "./docs/_includes"
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Build with Jekyll
