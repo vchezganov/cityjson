@@ -1,13 +1,13 @@
 {
-    "id": "03",
+    "id": "A03",
     "name": {
         "en": "Agency 03",
         "de": "Verkehrsbetriebe 03"
     },
     "language": "de",
     "phone": [
-        {"phone_type": "information", "value": "54321"},
-        {"phone_type": "support", "value": "12345"}
+        {"phoneType": "information", "value": "54321"},
+        {"phoneType": "support", "value": "12345"}
     ],
     "loc": [52.5255170, 13.4153366]
 }
