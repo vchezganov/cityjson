@@ -28,7 +28,7 @@
             "description": "Features of the stop",
             "$ref": "definitions.json#/$defs/stopFeatures"
         },
-        "access_points": {
+        "accessPoints": {
             "description": "Access points of the stop",
             "type": "array",
             "items": {

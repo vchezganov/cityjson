@@ -8,7 +8,6 @@ def validate_examples(entity_name: str):
     # resolver = jsonschema.validators.RefResolver(base_uri=f'{path_root.as_uri()}/',
     #                                              referrer=True)
 
-
     # resolver = jsonschema.validators.RefResolver(base_uri='https://github.com/vchezganov/cityjson/',
     #                                              referrer=True)
 
@@ -20,10 +19,9 @@ def validate_examples(entity_name: str):
     with open(folder_schema / f'{entity_name}.json', mode='r') as fin:
         entity_schema = json.load(fin)
 
-
     store = {
-        definition_schema['$id'] : definition_schema,
-        entity_schema['$id'] : entity_schema,
+        definition_schema['$id']: definition_schema,
+        entity_schema['$id']: entity_schema,
     }
 
     resolver = jsonschema.RefResolver(base_uri='https://github.com/vchezganov/cityjson/schema/',
@@ -43,5 +41,5 @@ def validate_examples(entity_name: str):
 
 
 if __name__ == '__main__':
-    for entity_name in ('settings', 'agencies', 'stops'):
+    for entity_name in ('settings', 'agencies', 'stops', 'routes'):
         validate_examples(entity_name)

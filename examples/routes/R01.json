@@ -3,9 +3,9 @@
     "agency_id": "A01",
     "name": "Route 01",
     "description": "Route One",
-    "line_color": "#770077",
-    "font_color": "#000000",
-    "vehicle_type": "bus",
+    "lineColor": "#770077",
+    "fontColor": "#000000",
+    "vehicleType": "bus",
     "features": [
         "bike_allow",
         "wheelchair_access"
@@ -77,24 +77,14 @@
             "description": "From city center",
             "timetables": [
                 {
-                    "times": [
+                    "firstTrip": [
                         ["S05", "11:10:00", "11:10:00"],
                         ["S04", "11:15:00", "11:15:00"],
                         ["S03", "11:25:00", "11:30:00"],
                         ["S02", "11:50:00", "11:50:00"]
-                    ]
-                },
-                {
-                    "intervals": [
-                        ["S01", 0],
-                        ["S02", 600],
-                        ["S03", 600],
-                        ["S04", 1800],
-                        ["S05", 300],
-                        ["S06", 600]
                     ],
-                    "start_time": "10:30:00",
-                    "frequency": 600
+                    "interval": 600,
+                    "endTime": "20:00:00"
                 }
             ]
         }

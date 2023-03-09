@@ -6,7 +6,7 @@
         "de-de": "Bushaltestelle für interregionale Reisen"
     },
     "loc": [13.404954, 52.520008, 34],
-    "stop_type": "parent",
+    "stopType": "parent",
     "timezone": "Europe/Berlin",
 
     "features": [
@@ -17,7 +17,7 @@
 
 
 
-    "access_points": [
+    "accessPoints": [
         {
             "id": "01-ap01",
             "name": "West side entrance",
@@ -28,7 +28,7 @@
         }
     ],
 
-    "child_stops": [
+    "childStops": [
 
     ],
 

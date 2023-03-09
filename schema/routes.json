@@ -20,17 +20,17 @@
             "description": "Description of the route",
             "type": "string"
         },
-        "line_color": {
+        "lineColor": {
             "description": "Line color of the route",
-            "$ref": "color.json"
+            "$ref": "definitions.json#/$defs/color"
         },
-        "font_color": {
+        "fontColor": {
             "description": "Font color of the route",
-            "$ref": "color.json"
+            "$ref": "definitions.json#/$defs/color"
         },
-        "vehicle_type": {
+        "vehicleType": {
             "description": "Vehicle type of the route",
-            "type": "number"
+            "type": ["string", "number"]
         },
         "features": {
             "oneOf": [
@@ -80,12 +80,7 @@
                     "description": "Location of the access point",
                     "$ref": "location.json"
                 }
-            },
-            "required": [
-                "id",
-                "name",
-                "loc"
-            ]
+            }
         },
         "timezone": {
             "description": "Timezone where the agency operates and that is used for timetables",
@@ -98,7 +93,6 @@
     },
     "required": [
         "id",
-        "name",
-        "loc"
+        "name"
     ]
 }

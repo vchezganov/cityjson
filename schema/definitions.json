@@ -48,6 +48,12 @@
             ]
         },
 
+        "color": {
+            "description": "Color in HEX format",
+            "type": "string",
+            "pattern": "^#[0-9a-fA-F]{6}$"
+        },
+
         "translation": {
             "oneOf": [
                 {
