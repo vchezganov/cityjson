@@ -1,5 +1,6 @@
 {
-    "version": "0.1.0",
+    "schemaVersion": "0.1.0",
+    "dataVersion": "0.1.0",
     "language": "en",
     "validity": {
         "from": "2023-01-01",

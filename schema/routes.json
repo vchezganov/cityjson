@@ -8,17 +8,17 @@
             "description": "Unique identifier for the route",
             "type": "string"
         },
-        "agency_id": {
+        "agencyID": {
             "description": "Agency ID the route belongs to",
             "type": "string"
         },
         "name": {
             "description": "Name of the route",
-            "type": "string"
+            "$ref": "definitions.json#/$defs/translation"
         },
         "description": {
             "description": "Description of the route",
-            "type": "string"
+            "$ref": "definitions.json#/$defs/translation"
         },
         "lineColor": {
             "description": "Line color of the route",
@@ -61,7 +61,7 @@
                 }
             ]
         },
-        "operation_days": {
+        "operationDays": {
             "description": "Operation days of the route",
             "type": "object",
             "propeties": {
@@ -89,6 +89,51 @@
         "icon": {
             "description": "Icon for the agency in base64 format",
             "type": "string"
+        },
+
+
+
+        "trips": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "$ref": "definitions.json#/$defs/translation"
+                    },
+
+                    "timetables": {
+                        "type": "array",
+                        "items": {
+                            "oneOf": [
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "times": {}
+                                    },
+                                    "required": ["times"]
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "firstTrip": {},
+                                        "interval": {
+                                            "description": "Interval between trips in seconds",
+                                            "type": "integer"
+                                        },
+                                        "endTime": {
+                                            "description": "Time of the last trip",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": ["firstTrip", "interval", "endTime"]
+                                }
+                            ]
+                        }
+                    }
+                },
+                "required": ["timetables"]
+            }
         }
     },
     "required": [

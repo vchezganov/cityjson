@@ -4,12 +4,16 @@
     "title": "Settings",
     "type": "object",
     "properties": {
-        "name": {
-            "description": "Name of the data",
+        "schemaVersion": {
+            "description": "Version of the schema",
             "type": "string"
         },
-        "version": {
+        "dataVersion": {
             "description": "Version of the data",
+            "type": "string"
+        },
+        "name": {
+            "description": "Name of the data",
             "type": "string"
         },
         "language": {
@@ -41,7 +45,8 @@
         }
     },
     "required": [
-        "version",
+        "schemaVersion",
+        "dataVersion",
         "language",
         "validity",
         "sameStopTransferTime",

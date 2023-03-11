@@ -7,30 +7,16 @@ permalink: /agencies
 **Agency** entity presents information about certain provider. It could be
 a bus operator, a rail agency, or a mobility provider for shared vehicles.
 
-## Examples (test)
+## Examples
+{% for ex in site.static_files %}
+  {% if ex.path contains 'examples/agencies' %}
 ```json
-{% include examples/routes/01.json %}
+{% include_relative {{ ex.path }} -%}
 ```
+  {% endif %}
+{% endfor %}
 
-```json
-{
-    "id": "foo",
-    "name": "Foo Operator",
-    "web": "https://foo.agency.com"
-}
-```
 
-```json
-{
-    "id": "foo",
-    "name": "Foo Operator",
-    "timezone": "Europe/Berlin",
-    "phone": [
-        {"phone_type": "information", "number": "54321"},
-        {"phone_type": "support", "number": "12345"}
-    ]
-}
-```
 
 ## Structure
 ```json

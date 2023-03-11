@@ -4,6 +4,7 @@
 
 # layout: home
 layout: default
+show_downloads: false
 ---
 
 **CityJSON** is the specification for _public transit_ data (stops, routes, timetables, etc)

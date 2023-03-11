@@ -1,6 +1,6 @@
 {
     "id": "R01",
-    "agency_id": "A01",
+    "agencyID": "A01",
     "name": "Route 01",
     "description": "Route One",
     "lineColor": "#770077",
@@ -10,7 +10,7 @@
         "bike_allow",
         "wheelchair_access"
     ],
-    "operation_days": {
+    "operationDays": {
         "weekdays": ["Mo", "Tu", "Fr"],
         "include": ["28.02.2023", "08.03.2023"],
         "exclude": ["27.02.2023"]
@@ -60,7 +60,7 @@
                         "include": ["air_condition"],
                         "exclude": ["bike_allow"]
                     },
-                    "operation_days": {
+                    "operationDays": {
                         "weekdays": ["Sa", "Su"]
                     },
                     "times": [
